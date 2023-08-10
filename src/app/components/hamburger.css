@@ -29,7 +29,7 @@
 
   .nav-menu {
     width: 100%;
-    padding-block: 50px;
+    padding-block: 0;
     position: absolute;
     left: 0;
     display: grid;
@@ -37,11 +37,12 @@
     justify-content: center;
     opacity: 0.5;
     z-index: 2;
-    transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
   }
   
   .nav-menu.active {
     height: auto;
+    padding-block: 50px;
     grid-template-rows: 1fr;
     /* display: block; */
     background-color: var(--clr-bg);

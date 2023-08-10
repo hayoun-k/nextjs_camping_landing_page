@@ -14,8 +14,11 @@
 }
 
 body {
-  padding: 1.33rem 1.66rem;
   background-color: var(--clr-bg);
+}
+
+header, main, footer {
+  padding: 1.33rem 1.66rem;
 }
 
 h1, h2, h3, p, a, span {
@@ -54,6 +57,197 @@ img {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@media screen and (min-width:800px) {
+  header, main, footer {
+    padding: 3rem 4rem;
+  }
+}
+
+/* background */
+
+.image-container {
+  width: 100%;
+  min-height: 100dvh;
+  position: absolute;
+  overflow: hidden;
+}
+
+.image-container > img {
+  position: absolute;
+  transition: all ease 1s;
+}
+
+#bird1 {
+  left: 5%;
+  bottom: 250px;
+  transform: rotate(-25deg);
+  animation: bird1 ease-out 4s;
+}
+
+@keyframes bird1 {
+  0% {
+    opacity: 0;
+    transform: translate(-25%, 0) rotate(-25deg);
+  }
+
+  75% {
+    opacity: 0;
+    transform: translate(-25%, 0) rotate(-25deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(-25deg);
+  }
+}
+
+#bird2 {
+  top: 280px;
+  right: 7.5%;
+  transform: rotate(-15deg);
+  animation: bird2 4s ease-out;
+}
+
+@keyframes bird2 {
+  0% {
+    transform: translate(15%, 0) rotate(-15deg);
+    opacity: 0;
+  }
+
+  75% {
+    transform: translate(15%, 0) rotate(-15deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(-15deg);
+    opacity: 1;
+  }
+}
+
+#tent {
+  width: 150%;
+  right: -25%;
+  bottom: 0;
+  z-index: -2;
+  object-position: 5% 50%;
+  animation: tent 3s ease-out;
+}
+
+@keyframes tent {
+  0% {
+    bottom: -30%;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+#ground {
+  width: 150%;
+  right: -20%;
+  bottom: 0;
+  z-index: -3;
+  animation: ground 1.5s ease-in-out;
+}
+
+@keyframes ground {
+  0% {
+    bottom: -15%;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+#tree {
+  width: 150%;
+  right: -25%;
+  bottom: 0;
+  z-index: -4;
+  animation: tree ease-in-out 4s;
+}
+
+@keyframes tree {
+  0% {
+    bottom: -15%;
+    opacity: 0;
+  }
+
+  25% {
+    bottom: -15%;
+    opacity: 0;
+  }
+
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+#sky {
+  width: 150%;
+  right: -25%;
+  bottom: 0;
+  z-index: -5;
+  animation: sky ease-out 4s;
+}
+
+@keyframes sky {
+  0% {
+    right: -60%;
+    opacity: 0;
+  }
+
+  75% {
+    right: -60%;
+    opacity: 0;
+  }
+
+  100% {
+    right: -25%;
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 800px) {
+
+  #bird1 {
+    bottom: 35%;
+    left: 3rem;
+  }
+
+  #bird2 {
+    left: calc(4rem + 30%);
+  }
+
+  #tent, #ground, #tree, #sky {
+    width: 100%;
+    bottom: 0;
+    right: 0;
+  }
+
+  @keyframes sky {
+    0% {
+      right: -30%;
+      opacity: 0;
+    }
+  
+    75% {
+      right: -10%;
+      opacity: 0;
+    }
+  
+    100% {
+      right: 0;
+      opacity: 1;
+    }
   }
 }
 
@@ -98,6 +292,24 @@ main {
   margin-top: 5rem;
 }
 
+.text-container {
+  animation: fadein ease-in-out 4s;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .subtitle {
   font-size: 1rem;
   letter-spacing: 0.2em;
@@ -115,4 +327,15 @@ h1 {
   margin-bottom: 50px;
   font-weight: 500;
   max-width: 85%;
+}
+
+@media screen and (min-width:800px) {
+  main {
+    margin-top: 2.5rem;
+  }
+
+
+  h1 {
+    font-size: 3.5rem;
+  }
 }
